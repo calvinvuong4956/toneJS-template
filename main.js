@@ -9,9 +9,6 @@ introDialog.showModal();
 // dialogClose setup
 dialogCloseButton.addEventListener("click", closeDialog);
 
-// playButton setup
-playButton.addEventListener("click", playNote);
-
 function closeDialog() {
   introDialog.close();
   //   when you close the dialog, the audio starts.
@@ -23,15 +20,22 @@ function closeDialog() {
 // tone synth init (instrument)
 const synth = new Tone.Synth().toDestination();
 
+// ----------------------------------------------------------------
+
+// playButton setup
+// playButton.addEventListener("click", playNote);
+
 // play sound with tone
 function playNote() {
-  synth.triggerAttackRelease("C4", "8n");
+  //   synth.triggerAttackRelease("C4", "8n");
   // ("note", "note-length")
 }
 
+// ----------------------------------------------------------------
+
 // separate attack/release functions with mouseDown/Up
 function startNote() {
-  synth.triggerAttack("C4");
+  synth.triggerAttack("C1");
 }
 function endNote() {
   synth.triggerRelease();
